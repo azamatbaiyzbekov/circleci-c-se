@@ -3,9 +3,8 @@ import React, {Component} from 'react';
 import Informations from './components/Informations/Informations'
 import Button from './components/Button/Button'
 
-
-
 import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -20,14 +19,11 @@ class App extends Component {
     showText: false,
     showButton: true
   };
-
-
-
+  
   toggleTextHandler = () => {
     const doesShow = this.state.showText;
     this.setState({ showText: !doesShow});
   };
-  
   
   
   render() {
@@ -36,13 +32,11 @@ class App extends Component {
 
     if (this.state.showText) {
       text = <Informations 
-
-        text={this.state.text}
       
+        text={this.state.text}
       />
     };
-
-
+    
     return (
       <div className="App">
       <button onClick = {() => {
@@ -55,14 +49,12 @@ class App extends Component {
         showText={this.state.showText}
         text={this.state.text}
         clicked={this.toggleTextHandler}
-        
-        
       /> : null}
        {text}
       </div>
-    );
-  }
+    )
+  };
   
-}
+};
 
 export default App;

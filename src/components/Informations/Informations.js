@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Information from '../Information/Information';
 
+
 class Informations extends Component {
     render() {
         return this.props.text.map(info => {
@@ -8,7 +9,6 @@ class Informations extends Component {
                 <Information 
                     name={info.name}
                     founded={info.founded}
-                
                 />
             )
         })

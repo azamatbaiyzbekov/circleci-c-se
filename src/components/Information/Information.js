@@ -8,13 +8,11 @@ class Information extends Component {
         return (
             <div className='Information'>
                 <p>
-                    My name is {this.props.name} and I was founded in {this.props.founded}
+                   My name is {this.props.name} and I was founded in {this.props.founded}
                 </p>
-            
-            
             </div>
         )
-    }
+    };
 };
 
 export default Information;
