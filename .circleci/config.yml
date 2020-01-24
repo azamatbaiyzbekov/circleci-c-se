@@ -3,10 +3,9 @@ jobs:
   build:
     docker:
     
-      - image: circleci/node:7.10
+      - image: circleci/node:6
 
       
-      - image: circleci/mongo:3.4.4
 
     working_directory: ~/circleci-c-se
 
