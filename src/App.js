@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+
+import Informations from './components/Informations/Informations'
+import Button from './components/Button/Button'
+
+
+
 import './App.css';
 
 class App extends Component {
@@ -26,9 +32,33 @@ class App extends Component {
   
   render() {
     console.log('[App.js] render');
+    let text = null;
+
+    if (this.state.showText) {
+      text = <Informations 
+
+        text={this.state.text}
+      
+      />
+    };
+
+
     return (
       <div className="App">
-       
+      <button onClick = {() => {
+        this.setState({ showButton: false})
+      }}
+      >
+      Clear the screen
+      </button>
+      {this.state.showButton ? <Button 
+        showText={this.state.showText}
+        text={this.state.text}
+        clicked={this.toggleTextHandler}
+        
+        
+      /> : null}
+       {text}
       </div>
     );
   }
