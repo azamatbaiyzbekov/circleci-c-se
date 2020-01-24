@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './Information.css'
+
 class Information extends Component {
     render() {
         console.log('[Information.js] rendering...')
