@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     
-      - image: circleci/node:6
+      - image: circleci/node:7
 
       
 
@@ -11,21 +11,5 @@ jobs:
 
     steps:
       - checkout
-
-      
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            
-            - v1-dependencies-
-
-      - run: npx install
-      - run: npx install --save-dev jest
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      
-      - run: npx test
+      - run: npm install
+      - run: npm test
