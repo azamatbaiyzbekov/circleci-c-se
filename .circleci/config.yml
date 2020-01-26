@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
     
-      - image: circleci/node:12.4.
+      - image: circleci/node:6
       - image: mongo:4.2.0
 
     working_directory: ~/circleci-c-se
