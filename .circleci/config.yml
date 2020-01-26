@@ -3,26 +3,30 @@ jobs:
   build:
     docker:
     
-      - image: circleci/node:6
+      - image: circleci/node:12.4.
+      - image: mongo:4.2.0
 
     working_directory: ~/circleci-c-se
 
     steps:
       - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
 
       
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            
-            - v1-dependencies-
+          key: dependency-cache-{{ checksum "package-lock.json" }}
 
-      - run: npm install
+      - run: 
+          name: install-npm-wee
+          command: npm install
 
       - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      
-      - run: npm test
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths: 
+              - ./node_modules
+              
+      - run: 
+          name: test
+          command: npm test
