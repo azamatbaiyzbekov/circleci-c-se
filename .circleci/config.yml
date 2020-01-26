@@ -19,8 +19,8 @@ jobs:
             
             - v1-dependencies-
 
-      - run: npm install
-      - run: npm install --save-dev jest
+      - run: npx install
+      - run: npx install --save-dev jest
 
       - save_cache:
           paths:
@@ -28,4 +28,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       
-      - run: npm test
+      - run: npx test
