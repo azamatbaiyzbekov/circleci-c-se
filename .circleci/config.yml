@@ -5,9 +5,6 @@ jobs:
     
       - image: circleci/node:6
 
-      
-
-    working_directory: ~/circleci-c-se
 
     steps:
       - checkout
